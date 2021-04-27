@@ -6,6 +6,8 @@ body {
   letter-spacing: 1px;
   word-break: break-all;
   color: #888;
+  background-color: pink;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 a {
   text-decoration: none;
@@ -43,10 +45,13 @@ header .navbar ul li {
 }
 
 header .navbar ul li a {
-  color: #555;
+  color: #fff;
   font-weight: bold;
   font-size: 15px;
+  text-shadow: 1px 1px 0 #000;
 }
+
+      
 /* お問い合わせ部分 */
 header .navbar ul li a:hover {
   color: #75a9ff;
@@ -61,14 +66,18 @@ header .navbar ul li.contact a {
 header .navbar ul li.contact a:hover {
   opacity: 0.5;
 }
+.animoBorderLeftRight{display:inline-block;position:relative;cursor:pointer}
+.animoBorderLeftRight::after{content:'';position:absolute;width:100%;transform:scaleX(0);height:2px;bottom:0;left:0;background-color:#f39c12;transform-origin:bottom right;transition:transform .4s cubic-bezier(.86,0,.07,1)}
+.animoBorderLeftRight:hover::after{transform:scaleX(1);transform-origin:bottom left}
 /* ドロップダウンリスト */
 header .drawer {
   visibility: hidden;
 }
+
 /* トップ部分 */
 .top {
   text-align: center;
-  margin: 150px 0 50px 0;
+  margin: 100px 0 50px 0;
 }
 .top .inner {
   display: inline-block;
@@ -83,14 +92,21 @@ header .drawer {
 }
 
 .font1 p {
-  color: #75a9ff;
-  font-size: 40px;
+  color: #fff;
+  font-size: 100px;
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  text-shadow: 5px 5px 0px #e0d56a;
+  letter-spacing: 20px;
+}
+.font1 span{
+  font-size: 35px;
+  display: block;
+  margin-top: -90px;
 }
 
 .font1 small {
-  color: #666;
+  color: #75a9ff;
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 25px;
@@ -137,6 +153,8 @@ header .drawer {
 .feature .inner p {
   font-size: 16px;
   line-height: 1.7;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
 }
 .font2 {
   color: #75a9ff;
@@ -186,6 +204,7 @@ header .drawer {
   text-align: center;
   padding-bottom: 50px;
   line-height: 1.5;
+  text-shadow: 0 5px 0px #e0d56a;
 }
 
 .font3 small {
@@ -193,7 +212,7 @@ header .drawer {
   font-size: 11px;
 }
 .app {
-  background: linear-gradient(#fff, #f5f6f7);
+  background: linear-gradient(rgb(245, 223, 232), #f5f6f7);
   border-radius: 30px;
   padding: 100px 20px;
   width: 85%;
@@ -208,6 +227,7 @@ header .drawer {
 .app .app_item {
   margin: 75px 50px 0 0;
 }
+
 .font4 {
   font-size: 25px;
   line-height: 1.3;
@@ -235,6 +255,8 @@ header .drawer {
 .app .app_img img {
   width: 300px;
   height: auto;
+  margin-top: 150px;
+  filter: drop-shadow(5px 10px 0px pink);
 }
 /* howto部分 */
 .how {
@@ -247,7 +269,7 @@ header .drawer {
   z-index: 2;
 }
 .how_to {
-  background: linear-gradient(#fff, #f5f6f7);
+  background: linear-gradient(rgb(245, 223, 232), #f5f6f7);
   width: 40%;
   display: inline-block;
   border-radius: 30px;
@@ -272,7 +294,7 @@ header .drawer {
   z-index: 2;
 }
 .faq .txt {
-  background: linear-gradient(#fff, #f5f6f7);
+  background: linear-gradient(rgb(245, 223, 232), #f5f6f7);
   width: 80%;
   margin: 0 auto;
   border-radius: 30px;
@@ -325,7 +347,7 @@ p {
   color: #555;
 }
 .news .txt {
-  background: linear-gradient(#fff, #f5f6f7);
+  background: linear-gradient(rgb(245, 223, 232), #f5f6f7);
   border-radius: 30px;
   padding: 60px;
   width: 80%;
@@ -345,7 +367,7 @@ p {
   padding-bottom: 100px;
 }
 
-.contact_btn .btn {
+/* .contact_btn .btn {
   text-align: center;
   background: #ff82b2;
   width: 17%;
@@ -357,7 +379,7 @@ p {
 .contact_btn .btn a {
   color: #fff;
   font-weight: bold;
-}
+} */
 
 footer {
   background: #555;
@@ -408,6 +430,79 @@ footer {
   color: #fff;
 }
 
+/* ボタンのデザイン */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+a.btn-border {
+  border: 2px solid #555;
+  border-radius: 0;
+  background: #fff;
+
+  -webkit-transform-style: preserve-3d;
+
+  transform-style: preserve-3d;
+  left: 42%;
+}
+
+a.btn-border:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 5px;
+  height: 100%;
+
+  content: '';
+  -webkit-transition: all .3s;
+  transition: all .3s;
+
+  background: pink;
+}
+
+a.btn-border:hover {
+  color: #fff;
+  background: pink;
+  text-shadow: 2px 2px 0 #000;
+}
+
+a.btn-border:hover:before {
+  background: #fff;
+}
+
 
 /* レスポンシブデザイン */
 @media screen and (max-width: 1024px) {}
@@ -444,6 +539,7 @@ header a.logo {
 .app .app_img img {
   width: 100%;
   height: auto;
+  margin-top: 0;
 }
 /* ドロップダウンリスト */
 header .drawer {
@@ -509,6 +605,9 @@ body.nav-open header .drawer:after {
   top: 9px;
   transform: rotate(45deg);
 }
+a.btn-border{
+  left: 37%;
+}
 }
 
 /* 課題　Surface Duo用デザイン*/
@@ -530,7 +629,7 @@ header .drawer{
   margin: 0 70px;
 }
 .how_to{
-  width: 45%;
+  width: 80%;
 }
 .how_list li{
   width: 80%;
@@ -540,8 +639,12 @@ header .drawer{
 }
 .contact_btn .btn{
   width: unset;
-  margin: 0 70px;
+  margin: 0;
 }
+a.btn-border{
+  left: 32%;
+}
+
 }
 
 /* スマホ向けデザイン */
@@ -553,7 +656,12 @@ header .drawer {
   margin: 0;
 }
 .font1 p {
-  font-size: 32px;
+  font-size: 65px;
+
+}
+.font1 span{
+  font-size: 25px;
+  margin-top: -30px;
 }
 .font1 small {
   font-size: 18px;
@@ -611,14 +719,14 @@ p {
 }
 .faq .more {
   width: unset;
-  margin: 0 70px;
+  margin: 0;
 }
 .news .txt {
   padding: 50px 30px;
 }
 .contact_btn .btn {
   width: unset;
-  margin: 0 70px;
+  margin: 0;
 }
 .footer_logo1 img {
   width: 150px;
@@ -638,5 +746,8 @@ p {
 }
 .mail {
   margin-top: 15px;
+}
+a.btn-border{
+  left: 24%;
 }
 }
